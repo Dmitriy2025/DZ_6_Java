@@ -47,6 +47,10 @@ class Laptop {
         return color;
     }
 
+    /**
+     * Переопределение toString() для удобного вывода информации о ноутбуке
+     * @return возвращает строковое представление информации о ноутбуке.
+     */
     @Override
     public String toString() {
         return "Laptop{" +
