@@ -1,5 +1,5 @@
 /**
- * Класс Laptop
+ * Класс Laptop описывает ноутбук
  */
 class Laptop {
     private String brand;
@@ -45,6 +45,10 @@ class Laptop {
 
     public String getColor() {
         return color;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     /**
