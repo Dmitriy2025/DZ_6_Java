@@ -1,5 +1,5 @@
 /**
- * Класс Laptop описывает ноутбук
+ * Класс Laptop представляет собой ноутбук
  */
 class Laptop {
     private String brand;

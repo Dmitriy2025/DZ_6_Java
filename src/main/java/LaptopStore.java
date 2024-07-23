@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.HashMap;
 
 /**
- * Класс LaptopStore описывает магазин ноутбуков
+ * Класс LaptopStore представляет собой магазин ноутбуков
  */
 public class LaptopStore {
     private Set<Laptop> laptops;
@@ -29,15 +29,16 @@ public class LaptopStore {
         Scanner scanner = new Scanner(System.in);
         Map<String, Object> filters = new HashMap<>();
 
-        System.out.println("Введите цифру, соответствующую необходимому критерию:");
+        System.out.println("МАГАЗИН НОУТБУКОВ\t");
         System.out.println("1 - ОЗУ");
         System.out.println("2 - Объем ЖД");
         System.out.println("3 - Операционная система");
         System.out.println("4 - Цвет");
         System.out.println("5 - Цена");
+        System.out.println("Введите цифру, соответствующую необходимому критерию:");
 
         int criterion = scanner.nextInt();
-        scanner.nextLine(); // consume newline
+        scanner.nextLine();
 
         switch (criterion) {
             case 1:
@@ -102,19 +103,6 @@ public class LaptopStore {
                 System.out.println(laptop);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        LaptopStore store = new LaptopStore();
-
-        // Добавление ноутбуков в магазин
-        store.addLaptop(new Laptop("Dell", 8, 512, "Windows", "Черный", 80000));
-        store.addLaptop(new Laptop("HP", 16, 1024, "Windows", "Серебристый", 120000));
-        store.addLaptop(new Laptop("Apple", 8, 256, "MacOS", "Серый", 200000));
-        store.addLaptop(new Laptop("Lenovo", 4, 500, "Linux", "Черный", 60000));
-
-        // Фильтрация ноутбуков
-        store.filterLaptops();
     }
 }
 
