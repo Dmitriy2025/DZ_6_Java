@@ -59,7 +59,7 @@ class Laptop {
     @Override
     public String toString() {
         return "Laptop{" +
-                "model='" + brand + '\'' +
+                "brand='" + brand + '\'' +
                 ", ram=" + ram +
                 ", hdd=" + hdd +
                 ", os='" + os + '\'' +
