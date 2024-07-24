@@ -30,11 +30,12 @@ public class LaptopStore {
         Map<String, Object> filters = new HashMap<>();
 
         System.out.println("МАГАЗИН НОУТБУКОВ\t");
-        System.out.println("1 - ОЗУ");
-        System.out.println("2 - Объем ЖД");
-        System.out.println("3 - Операционная система");
-        System.out.println("4 - Цвет");
-        System.out.println("5 - Цена");
+        System.out.println("1 - Бренд");
+        System.out.println("2 - ОЗУ");
+        System.out.println("3 - Объем ЖД");
+        System.out.println("4 - Операционная система");
+        System.out.println("5 - Цвет");
+        System.out.println("6 - Цена");
         System.out.println("Введите цифру, соответствующую необходимому критерию:");
 
         int criterion = scanner.nextInt();
@@ -42,23 +43,27 @@ public class LaptopStore {
 
         switch (criterion) {
             case 1:
+                System.out.println("Введите бренд ноутбука:");
+                filters.put("brand", scanner.nextLine());
+                break;
+            case 2:
                 System.out.println("Введите минимальный объем ОЗУ (в ГБ):");
                 filters.put("ram", scanner.nextInt());
                 break;
-            case 2:
+            case 3:
                 System.out.println("Введите минимальный объем ЖД (в ГБ):");
                 filters.put("hdd", scanner.nextInt());
                 break;
-            case 3:
+            case 4:
                 System.out.println("Введите операционную систему:");
                 filters.put("os", scanner.nextLine());
                 break;
-            case 4:
+            case 5:
                 System.out.println("Введите цвет:");
                 filters.put("color", scanner.nextLine());
                 break;
-            case 5:
-                System.out.println("Введите максимальную цену:");
+            case 6:
+                System.out.println("Введите максимально допустимую цену:");
                 filters.put("price", scanner.nextDouble());
                 break;
             default:
@@ -72,6 +77,9 @@ public class LaptopStore {
         Set<Laptop> filteredLaptops = new HashSet<>();
         for (Laptop laptop : laptops) {
             boolean matches = true;
+            if (filters.containsKey("brand") && !laptop.getBrand().equalsIgnoreCase((String) filters.get("brand"))) {
+                matches = false;
+            }
             if (filters.containsKey("ram") && laptop.getRam() < (int) filters.get("ram")) {
                 matches = false;
             }

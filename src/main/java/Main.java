@@ -14,6 +14,7 @@ public class Main {
          * Фильтрация ноутбуков
          */
         store.filterLaptops();
+
     }
 }
 

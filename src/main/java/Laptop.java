@@ -9,9 +9,10 @@ class Laptop {
     private String color;
     private double price;
 
+
     /**
      * Конструктор класса Laptop
-     * @param brand модель ноутбука
+     * @param brand бренд ноутбука
      * @param ram объем оперативной памяти в ГБ
      * @param hdd объем жесткого диска в ГБ
      * @param os название операционной системы
@@ -63,7 +64,7 @@ class Laptop {
                 ", hdd=" + hdd +
                 ", os='" + os + '\'' +
                 ", color='" + color + '\'' +
-                ", price=" + price +
+                ", price=" + price + " руб" +
                 '}';
     }
 }
